@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: man
+  password: 1042107
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: kuroemon_development
+
+test:
+  <<: *default
+  database: kuroemon_test
+
+production:
+  <<: *default
+  database: kuroemon_production
+  username: kuroemon
+  password: <%= ENV['KUROEMON_DATABASE_PASSWORD'] %>
