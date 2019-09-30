@@ -1,0 +1,11 @@
+vi:
+  message:
+    invalid_credential: "Thông tin không hợp lệ."
+    invalid_token: "Token không hợp lệ."
+    missing_token: "Không thấy token."
+    unauthorized: "Yêu cầu trái phép."
+    account_created: "Tài khoản được tạo thành công."
+    account_not_created: "Tài khoản không thể được tạo."
+    expired_token: "Xin lỗi, mã thông báo của bạn đã hết hạn. Làm ơn đăng nhập để tiếp tục."
+    account_not_active: "Tài khoản chưa được kích hoạt. Kiểm tra hộp thư điện tử của bạn."
+    not_found: "Không thể tìm thấy %{resource}."
