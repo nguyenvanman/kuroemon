@@ -11,11 +11,12 @@ class User < ApplicationRecord
   validates :email, 
     presence: true,
     length: { maximum: 255 },
-    format: { with: VALID_EMAIL_REGEX, message: 'Invalid email format' },
+    format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }
 
   validates :phone,
-    format: { with: VALID_PHONE_NUMBER_REGEX, message: 'Invalid phone number format' }
+    allow_blank: true,
+    format: { with: VALID_PHONE_NUMBER_REGEX }
     
   validates :password,
     presence: true,
