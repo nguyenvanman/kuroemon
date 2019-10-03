@@ -33,4 +33,9 @@ class User < ApplicationRecord
   def down_case_email
     self.email = email.downcase
   end
+
+  def update_device_tokens(device_token)
+    self.device_tokens << device_token
+    save!
+  end 
 end

@@ -13,7 +13,7 @@ class AuthenticationController < ApplicationController
   end
 
   def sign_in_params
-    params.require(%i[email password])
-    params.permit(:email, :password)
+    params.require(%i[email password device_token])
+    params.permit(:email, :password, :device_token)
   end
 end
