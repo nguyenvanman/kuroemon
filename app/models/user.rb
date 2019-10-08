@@ -35,7 +35,13 @@ class User < ApplicationRecord
   end
 
   def update_device_tokens(device_token)
-    self.device_tokens << device_token
+    device_tokens << device_token
     save!
   end 
+
+  def remove_device_token(device_token)
+    byebug
+    device_tokens.delete(device_token)
+    save!
+  end
 end
