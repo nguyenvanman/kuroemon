@@ -4,6 +4,9 @@ class User < ApplicationRecord
   before_save :down_case_email
   has_secure_password
 
+  has_many :user_teams
+  has_many :teams, through: :user_teams, source: :team
+
   validates :name,
     presence: true, 
     length: { maximum: 50 }
