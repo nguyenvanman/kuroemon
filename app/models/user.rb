@@ -40,7 +40,6 @@ class User < ApplicationRecord
   end 
 
   def remove_device_token(device_token)
-    byebug
     device_tokens.delete(device_token)
     save!
   end

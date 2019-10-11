@@ -1,5 +1,5 @@
 class AuthenticationController < ApplicationController
-  skip_before_action :authorize_request, only: %i[sign_up sign_in]
+  skip_before_action :authorize_request, :get_user, only: %i[sign_up sign_in]
 
   def sign_up
     render_resource AuthService::SignUp.call(sign_up_params)
@@ -10,7 +10,7 @@ class AuthenticationController < ApplicationController
   end
 
   def sign_out
-    AuthService::SignOut.call(current_user, sign_out_params)
+    AuthService::SignOut.call(@current_user, sign_out_params)
     render_resource_nil
   end
 
