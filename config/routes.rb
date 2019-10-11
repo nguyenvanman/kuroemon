@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
     scope 'users' do
       scope 'me' do
+        get '', to: 'users#show'
         post '', to: 'users#update'
       end 
     end
