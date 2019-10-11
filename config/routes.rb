@@ -10,6 +10,10 @@ Rails.application.routes.draw do
       scope 'me' do
         get '', to: 'users#show'
         post '', to: 'users#update'
+        
+        scope 'teams' do
+          post '', to: 'teams#create'
+        end
       end 
     end
   end
