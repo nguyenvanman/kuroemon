@@ -11,9 +11,7 @@ Rails.application.routes.draw do
         get '', to: 'users#show'
         post '', to: 'users#update'
         
-        scope 'teams' do
-          post '', to: 'teams#create'
-        end
+        resources :teams, only: %i[create update]
       end 
     end
   end
